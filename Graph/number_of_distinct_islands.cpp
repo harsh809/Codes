@@ -1,5 +1,14 @@
 // GFG Nubers of distinct island
 
+//{ Driver Code Starts
+// Initial Template for C++
+#include <bits/stdc++.h>
+using namespace std;
+
+
+// } Driver Code Ends
+// User function Template for C++
+
 class Solution {
   public:
     void dfs(int row,int col,vector<vector<int>> &vis,vector<vector<int>>& grid,vector<pair<int,int>>& vec,int row0,int col0){
@@ -34,3 +43,25 @@ class Solution {
         return st.size();
     }
 };
+
+
+//{ Driver Code Starts.
+
+int main() {
+
+    int t;
+    cin >> t;
+    while (t--) {
+        int n, m;
+        cin >> n >> m;
+        vector<vector<int>> grid(n, vector<int>(m));
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                cin >> grid[i][j];
+            }
+        }
+        Solution obj;
+        cout << obj.countDistinctIslands(grid) << endl;
+    }
+}
+// } Driver Code Ends
