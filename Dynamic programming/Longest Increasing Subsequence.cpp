@@ -51,3 +51,27 @@ int longestIncreasingSubsequence(int arr[], int n)
     cout<<endl;
     return maxi;
 }
+
+
+
+//using binary search
+#include <bits/stdc++.h>
+int longestIncreasingSubsequence(int arr[], int n)
+{
+    vector<int> temp;
+    int len = 1;
+    temp.push_back(arr[0]);
+    for(int i=1;i<n;i++){
+        if(arr[i]>temp.back()){
+            temp.push_back(arr[i]);
+            len++;
+        }
+        else{
+            auto it = lower_bound(temp.begin(), temp.end(), arr[i]);
+            int index = distance(temp.begin(), it);
+            temp[index] = arr[i];
+        }
+    }
+    return len;
+}
+//TC = O(n)  sc = o(n)
