@@ -34,6 +34,33 @@ class Solution
 	}
 
 };
+// optimized code
+// public:
+//     void dfs(int node,vector<int> adj[],stack<int> &st,vector<int>& vis){
+//         vis[node] = 1;
+//         for(auto it:adj[node]){
+//             if(!vis[it]){
+//                 dfs(it,adj,st,vis);
+//             }
+//         }
+//         st.push(node);
+//     }
+// 	int findMotherVertex(int V, vector<int>adj[])
+// 	{
+// 	    stack<int> st;
+// 	    vector<int> vis(V,0);
+// 	    for(int i=0;i<V;i++){
+// 	        if(!vis[i]){
+// 	            dfs(i,adj,st,vis);
+// 	        }
+// 	    }
+// 	    int node = st.top();
+// 	    stack<int> str;
+// 	    vector<int> visited(V,0);
+// 	    dfs(node,adj,str,visited);
+// 	    if(str.size()==V) return node;
+// 	    return -1;
+// 	}
 
 //{ Driver Code Starts.
 int main(){
