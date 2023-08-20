@@ -5,6 +5,7 @@ class disjointset{
     vector<int> rank,parent,size;
     disjointset(int n){
         rank.resize(n+1,0);
+        size.resize(n+1);
         parent.resize(n+1);
         for(int i=0;i<=n;i++){
             parent[i] = i;
@@ -42,7 +43,7 @@ class disjointset{
             parent[ulp_u] = ulp_v;
             size[ulp_v] += size[ulp_u];
         }
-        else if(size[ulp_u] > size[ulp_v]){
+        else{
             parent[ulp_v] = ulp_u;
             size[ulp_u] += size[ulp_v];
         }
