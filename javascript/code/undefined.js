@@ -1,0 +1,10 @@
+var a;
+console.log(a);
+a = 7;
+console.log(a);
+a = "hello world";
+console.log(a);
+a = 67;
+console.log(a);
+a = true;
+console.log(a);
